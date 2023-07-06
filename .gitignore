@@ -1,0 +1,6 @@
+/build/
+/target/
+databases/SHOPPING_CART_ERD.mwb.bak
+tomcat.*
+bin/classes/application.properties
+.idea
