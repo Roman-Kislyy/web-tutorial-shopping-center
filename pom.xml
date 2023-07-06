@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>shopping-cart</groupId>
 	<artifactId>shopping-cart</artifactId>
-	<version>0.1.1</version>
+	<version>0.1.2</version>
 	<packaging>jar</packaging>
 	<name>Shopping Cart</name>
 	<description>A Shopping Cart Project in Java by Bitter Code</description>
@@ -10,7 +10,7 @@
 		<tomcat.version>8.5.23</tomcat.version>
 	</properties>
 	<build>
-		<finalName>shopping-center-tutorial</finalName>
+		<finalName>shopping-center-tutorial-${version}</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
@@ -72,13 +72,13 @@
 							<overwrite>true</overwrite>
 							<outputDirectory>${basedir}/bin</outputDirectory>
 							<resources>
-								<resource>
-									<directory>${basedir}/src/main/resources</directory>
-									<filtering>false</filtering>
-									<includes>
-										<include>application.properties</include>
-									</includes>
-								</resource>
+<!--								<resource>-->
+<!--									<directory>${basedir}/src/main/resources</directory>-->
+<!--									<filtering>false</filtering>-->
+<!--									<includes>-->
+<!--										<include>application.properties</include>-->
+<!--									</includes>-->
+<!--								</resource>-->
 								<resource>
 									<directory>${basedir}/target</directory>
 									<filtering>false</filtering>
@@ -157,8 +157,6 @@
 			<artifactId>jaxws-api</artifactId>
 			<version>2.3.1</version>
 		</dependency>
-
-
 		<dependency>
 			<groupId>commons-codec</groupId>
 			<artifactId>commons-codec</artifactId>

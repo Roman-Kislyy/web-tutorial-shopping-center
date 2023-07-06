@@ -1,6 +1,8 @@
 package launch;
 
 import java.io.File;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 import org.apache.catalina.WebResourceRoot;
 import org.apache.catalina.core.StandardContext;
@@ -9,7 +11,6 @@ import org.apache.catalina.webresources.DirResourceSet;
 import org.apache.catalina.webresources.StandardRoot;
 
 public class Main {
-
     public static void main(String[] args) throws Exception {
 
         String webappDirLocation = "src/main/webapp/";
@@ -26,14 +27,14 @@ public class Main {
         System.out.println("Web content founded: " + new File("" + webappDirLocation).getAbsolutePath());
 
         Tomcat tomcat = new Tomcat();
-
         //The port that we should run on can be set into an environment variable
         //Look for that variable and default to 8080 if it isn't there.
-        String webPort = System.getenv("PORT");
+//        ResourceBundle rb = ResourceBundle.getBundle("application");
+        ResourceBundle rb = ResourceBundle.getBundle("application");
+        String webPort = rb.getString("server.port");
         if(webPort == null || webPort.equals("")) {
             webPort = "8086";
         }
-
         tomcat.setPort(Integer.valueOf(webPort));
 
         StandardContext ctx = (StandardContext) tomcat.addWebapp("/", new File(webappDirLocation).getAbsolutePath());
