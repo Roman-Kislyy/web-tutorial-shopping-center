@@ -15,6 +15,9 @@ Sometimes, if the user tried to add any item which is out of stock, them they wi
 
 Note: The payment page is created only for demo purpose and its not fully integrated with any payment gateway. So for now any credit card details will be accepted and the demo orders will be placed.
 
+### Quick start
+Try to start script `bin/start.bat` 
+
 ## Highlights :--
 
 ### The users will get a mail to their registered mail Id during:-
