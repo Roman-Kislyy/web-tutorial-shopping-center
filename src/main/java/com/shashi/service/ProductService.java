@@ -18,11 +18,11 @@ public interface ProductService {
 
 	public String updateProductPrice(String prodId, double updatedPrice);
 
-	public List<ProductBean> getAllProducts();
+	public List<ProductBean> getAllProducts(int start, int end);
 
-	public List<ProductBean> getAllProductsByType(String type);
+	public List<ProductBean> getAllProductsByType(String type, int start, int end);
 
-	public List<ProductBean> searchAllProducts(String search);
+	public List<ProductBean> searchAllProducts(String search, int start, int end);
 
 	public byte[] getImage(String prodId);
 

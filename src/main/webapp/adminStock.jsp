@@ -64,7 +64,7 @@
 					<%
 					ProductServiceImpl productDao = new ProductServiceImpl();
 					List<ProductBean> products = new ArrayList<ProductBean>();
-					products = productDao.getAllProducts();
+					products = productDao.getAllProducts(0, 30);
 					for (ProductBean product : products) {
 					%>
 

@@ -184,7 +184,7 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Override
-	public List<ProductBean> getAllProducts() {
+	public List<ProductBean> getAllProducts(int start, int end) {
 		List<ProductBean> products = new ArrayList<ProductBean>();
 
 		Connection con = DBUtil.provideConnection();
@@ -193,7 +193,7 @@ public class ProductServiceImpl implements ProductService {
 		ResultSet rs = null;
 
 		try {
-			ps = con.prepareStatement("select * from product");
+			ps = con.prepareStatement(String.format("select * from product LIMIT %d OFFSET %d", end, start));
 
 			rs = ps.executeQuery();
 
@@ -225,7 +225,7 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Override
-	public List<ProductBean> getAllProductsByType(String type) {
+	public List<ProductBean> getAllProductsByType(String type, int start, int end) {
 		List<ProductBean> products = new ArrayList<ProductBean>();
 
 		Connection con = DBUtil.provideConnection();
@@ -234,7 +234,7 @@ public class ProductServiceImpl implements ProductService {
 		ResultSet rs = null;
 
 		try {
-			ps = con.prepareStatement("SELECT * FROM `shopping-cart`.product where lower(ptype) like ?;");
+			ps = con.prepareStatement(String.format("SELECT * FROM `shopping-cart`.product where lower(ptype) like ?; LIMIT %d OFFSET %d", end, start));
 			ps.setString(1, "%" + type + "%");
 			rs = ps.executeQuery();
 
@@ -266,7 +266,7 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Override
-	public List<ProductBean> searchAllProducts(String search) {
+	public List<ProductBean> searchAllProducts(String search, int start, int end) {
 		List<ProductBean> products = new ArrayList<ProductBean>();
 
 		Connection con = DBUtil.provideConnection();
@@ -276,7 +276,7 @@ public class ProductServiceImpl implements ProductService {
 
 		try {
 			ps = con.prepareStatement(
-					"SELECT * FROM `shopping-cart`.product where lower(ptype) like ? or lower(pname) like ? or lower(pinfo) like ?");
+					String.format("SELECT * FROM `shopping-cart`.product where lower(ptype) like ? or lower(pname) like ? or lower(pinfo) like ? LIMIT %d OFFSET %d", end, start));
 			search = "%" + search + "%";
 			ps.setString(1, search);
 			ps.setString(2, search);

@@ -35,17 +35,17 @@
 	String type = request.getParameter("type");
 	String message = "All Products";
 	if (search != null) {
-		products = prodDao.searchAllProducts(search);
+		products = prodDao.searchAllProducts(search, 0, 30);
 		message = "Showing Results for '" + search + "'";
 	} else if (type != null) {
-		products = prodDao.getAllProductsByType(type);
+		products = prodDao.getAllProductsByType(type, 0, 30);
 		message = "Showing Results for '" + type + "'";
 	} else {
-		products = prodDao.getAllProducts();
+		products = prodDao.getAllProducts(0, 30);
 	}
 	if (products.isEmpty()) {
 		message = "No items found for the search '" + (search != null ? search : type) + "'";
-		products = prodDao.getAllProducts();
+		products = prodDao.getAllProducts(0, 30);
 	}
 	%>
 
