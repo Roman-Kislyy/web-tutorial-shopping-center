@@ -2,6 +2,7 @@ package com.shashi.utility;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.UUID;
 
 public class IDUtil {
 
@@ -16,12 +17,7 @@ public class IDUtil {
 	}
 
 	public static String generateTransId() {
-		String tId = null;
-
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddhhmmss");
-		tId = sdf.format(new Date());
-		tId = "T" + tId;
-
+		String tId = UUID.randomUUID().toString();
 		return tId;
 	}
 }

@@ -1,6 +1,13 @@
 # Changelog
 Web shop for studying
 
+## [0.3.0]
+
+### Changed
+- 
+- Fixed bug - Duplicate transaction ID
+
+
 ## [0.2.0]
 
 ### Changed
