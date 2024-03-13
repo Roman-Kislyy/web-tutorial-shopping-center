@@ -1,10 +1,16 @@
 # Changelog
 Web shop for studying
 
+## [0.4.0]
+
+### Changed
+
+- Fixed bug - Connection leak
+
 ## [0.3.0]
 
 ### Changed
-- 
+ 
 - Fixed bug - Duplicate transaction ID
 
 

@@ -4,4 +4,4 @@ databases/SHOPPING_CART_ERD.mwb.bak
 tomcat.*
 bin/classes/application.properties
 .idea
-databases/shopping-mysql/*
+databases/shopping-mysql
