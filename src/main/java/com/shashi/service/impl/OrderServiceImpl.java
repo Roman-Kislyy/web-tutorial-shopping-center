@@ -99,6 +99,9 @@ public class OrderServiceImpl implements OrderService {
 			e.printStackTrace();
 		}
 
+		DBUtil.closeConnection(con);
+		DBUtil.closeConnection(ps);
+
 		return flag;
 	}
 
@@ -127,6 +130,9 @@ public class OrderServiceImpl implements OrderService {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+
+		DBUtil.closeConnection(con);
+		DBUtil.closeConnection(ps);
 
 		return flag;
 	}
@@ -192,6 +198,10 @@ public class OrderServiceImpl implements OrderService {
 			e.printStackTrace();
 		}
 
+		DBUtil.closeConnection(con);
+		DBUtil.closeConnection(ps);
+		DBUtil.closeConnection(rs);
+
 		return orderList;
 	}
 
@@ -224,6 +234,10 @@ public class OrderServiceImpl implements OrderService {
 
 			e.printStackTrace();
 		}
+
+		DBUtil.closeConnection(con);
+		DBUtil.closeConnection(ps);
+		DBUtil.closeConnection(rs);
 
 		return orderList;
 	}
@@ -263,6 +277,10 @@ public class OrderServiceImpl implements OrderService {
 
 			e.printStackTrace();
 		}
+
+		DBUtil.closeConnection(con);
+		DBUtil.closeConnection(ps);
+		DBUtil.closeConnection(rs);
 
 		return orderList;
 	}

@@ -107,7 +107,6 @@ public class ProductServiceImpl implements ProductService {
 		DBUtil.closeConnection(con);
 		DBUtil.closeConnection(ps);
 		DBUtil.closeConnection(ps2);
-
 		return status;
 	}
 
@@ -374,6 +373,7 @@ public class ProductServiceImpl implements ProductService {
 
 		DBUtil.closeConnection(con);
 		DBUtil.closeConnection(ps);
+		DBUtil.closeConnection(rs);
 
 		return product;
 	}
@@ -468,6 +468,7 @@ public class ProductServiceImpl implements ProductService {
 
 		DBUtil.closeConnection(con);
 		DBUtil.closeConnection(ps);
+		DBUtil.closeConnection(rs);
 
 		return price;
 	}
@@ -530,6 +531,7 @@ public class ProductServiceImpl implements ProductService {
 
 		DBUtil.closeConnection(con);
 		DBUtil.closeConnection(ps);
+		DBUtil.closeConnection(rs);
 
 		return quantity;
 	}

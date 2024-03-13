@@ -33,6 +33,10 @@ public class TransServiceImpl implements TransService {
 			e.printStackTrace();
 		}
 
+		DBUtil.closeConnection(con);
+		DBUtil.closeConnection(ps);
+		DBUtil.closeConnection(rs);
+
 		return userId;
 	}
 

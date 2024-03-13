@@ -22,7 +22,6 @@ public class CartServiceImpl implements CartService {
 		Connection con = DBUtil.provideConnection();
 
 		PreparedStatement ps = null;
-		PreparedStatement ps2 = null;
 		ResultSet rs = null;
 
 		try {
@@ -76,7 +75,6 @@ public class CartServiceImpl implements CartService {
 		DBUtil.closeConnection(con);
 		DBUtil.closeConnection(ps);
 		DBUtil.closeConnection(rs);
-		DBUtil.closeConnection(ps2);
 
 		return status;
 	}
@@ -231,7 +229,6 @@ public class CartServiceImpl implements CartService {
 		Connection con = DBUtil.provideConnection();
 
 		PreparedStatement ps = null;
-		ResultSet rs = null;
 
 		try {
 
@@ -251,7 +248,6 @@ public class CartServiceImpl implements CartService {
 
 		DBUtil.closeConnection(con);
 		DBUtil.closeConnection(ps);
-		DBUtil.closeConnection(rs);
 
 		return flag;
 	}
@@ -353,6 +349,10 @@ public class CartServiceImpl implements CartService {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+
+		DBUtil.closeConnection(con);
+		DBUtil.closeConnection(ps);
+		DBUtil.closeConnection(rs);
 
 		return count;
 	}
