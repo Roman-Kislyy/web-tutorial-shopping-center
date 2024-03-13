@@ -147,6 +147,10 @@ public class DemandServiceImpl implements DemandService {
 			e.printStackTrace();
 		}
 
+		DBUtil.closeConnection(con);
+		DBUtil.closeConnection(ps);
+		DBUtil.closeConnection(rs);
+
 		return demandList;
 	}
 

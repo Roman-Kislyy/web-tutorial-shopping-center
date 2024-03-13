@@ -64,7 +64,7 @@ public class UserServiceImpl implements UserService {
 			e.printStackTrace();
 		}
 
-		DBUtil.closeConnection(ps);
+		DBUtil.closeConnection(conn);
 		DBUtil.closeConnection(ps);
 
 		return status;
@@ -199,6 +199,10 @@ public class UserServiceImpl implements UserService {
 			e.printStackTrace();
 		}
 
+		DBUtil.closeConnection(con);
+		DBUtil.closeConnection(ps);
+		DBUtil.closeConnection(rs);
+
 		return fname;
 	}
 
@@ -224,6 +228,10 @@ public class UserServiceImpl implements UserService {
 
 			e.printStackTrace();
 		}
+
+		DBUtil.closeConnection(con);
+		DBUtil.closeConnection(ps);
+		DBUtil.closeConnection(rs);
 
 		return userAddr;
 	}
